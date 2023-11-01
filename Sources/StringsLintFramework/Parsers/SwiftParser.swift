@@ -37,7 +37,7 @@ public struct SwiftParser: LocalizableParser {
     }
     
     public init(macros: [String]) {
-        self.uiKitPattern = "(\(macros.joined(separator: "|")))\\(\"([^\"]+)\", (tableName: \"([^\"]+)\", )?(comment: \"([^\"]*)\")\\)"
+        self.uiKitPattern = "(\(macros.joined(separator: "|")))\\(\"([^\"]+)\"(, tableName: \"([^\"]+)\")?(, comment: \"([^\"]*)\")?\\)"
         self.swiftUIImplicitPattern = "Text\\(\"([^\"]+)\"\\)"
         self.swiftUIExplicitPattern = "Text\\(LocalizedStringKey\\(\"([^\"]+)\"\\)(, tableName: \"([^\"]+)\")?.*\\)"
         self.ignoreThisPattern = "//stringslint:ignore"
